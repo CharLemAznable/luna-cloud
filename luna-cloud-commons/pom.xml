@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.github.charlemaznable</groupId>
+        <artifactId>complex-dependencies</artifactId>
+        <version>0.5.5-SNAPSHOT</version>
+    </parent>
+
+    <groupId>com.github.charlemaznable.luna</groupId>
+    <artifactId>luna-cloud-commons</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
+    <name>Luna Cloud Commons</name>
+    <url>https://github.com/CharLemAznable/luna-cloud</url>
+    <description>Luna Cloud Commons Jar Package.</description>
+
+    <scm>
+        <connection>scm:git:https://github.com/CharLemAznable/luna-cloud.git</connection>
+        <developerConnection>scm:git:https://github.com/CharLemAznable/luna-cloud.git</developerConnection>
+        <url>https://github.com/CharLemAznable/luna-cloud</url>
+    </scm>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.github.charlemaznable</groupId>
+            <artifactId>gentle-boot</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>joda-time</groupId>
+            <artifactId>joda-time</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.github.bingoohuang</groupId>
+            <artifactId>eql</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.github.bingoohuang</groupId>
+            <artifactId>asmvalidator</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.github.bingoohuang</groupId>
+            <artifactId>westcache</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.github.bingoohuang</groupId>
+            <artifactId>westid</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.redisson</groupId>
+            <artifactId>redisson</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>transmittable-thread-local</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.github.charlemaznable</groupId>
+            <artifactId>logback-miner</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.github.kstyrc</groupId>
+            <artifactId>embedded-redis</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.github.charlemaznable</groupId>
+            <artifactId>embedded-mysql-extension</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+</project>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.github.charlemaznable</groupId>
+        <artifactId>complex-dependencies</artifactId>
+        <version>0.5.5-SNAPSHOT</version>
+    </parent>
+
+    <groupId>com.github.charlemaznable.luna</groupId>
+    <artifactId>luna-cloud-commons-dependencies</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <name>Luna Cloud Commons Dependencies</name>
+    <url>https://github.com/CharLemAznable/luna-cloud</url>
+    <description>Luna Cloud Commons Dependencies Pom.</description>
+
+    <scm>
+        <connection>scm:git:https://github.com/CharLemAznable/luna-cloud.git</connection>
+        <developerConnection>scm:git:https://github.com/CharLemAznable/luna-cloud.git</developerConnection>
+        <url>https://github.com/CharLemAznable/luna-cloud</url>
+    </scm>
+
+    <properties>
+        <luna-cloud.version>0.0.1-SNAPSHOT</luna-cloud.version>
+        <spring-cloud.version>2021.0.0</spring-cloud.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.github.charlemaznable.luna</groupId>
+            <artifactId>luna-cloud-commons</artifactId>
+            <version>${luna-cloud.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.github.charlemaznable</groupId>
+            <artifactId>logback-miner</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.github.kstyrc</groupId>
+            <artifactId>embedded-redis</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.github.charlemaznable</groupId>
+            <artifactId>embedded-mysql-extension</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+</project>
