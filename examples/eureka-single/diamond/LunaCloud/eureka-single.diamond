@@ -1,0 +1,7 @@
+# suppress inspection "UnusedProperty" for whole file
+spring.application.name=test.eureka
+server.servlet.context-path=/test-eureka
+server.port=61222
+eureka.client.register-with-eureka=false
+eureka.client.fetch-registry=false
+eureka.client.serviceUrl.defaultZone=http://localhost:${server.port}/test-eureka/eureka/
