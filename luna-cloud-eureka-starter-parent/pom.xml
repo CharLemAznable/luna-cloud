@@ -24,10 +24,6 @@
         <url>https://github.com/CharLemAznable/luna-cloud</url>
     </scm>
 
-    <properties>
-        <luna-cloud.version>0.0.1-SNAPSHOT</luna-cloud.version>
-    </properties>
-
     <dependencies>
         <dependency>
             <groupId>com.github.charlemaznable.luna</groupId>
