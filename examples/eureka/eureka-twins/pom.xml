@@ -6,7 +6,7 @@
 
     <parent>
         <groupId>com.github.charlemaznable.luna</groupId>
-        <artifactId>luna-cloud-eureka-starter-parent</artifactId>
+        <artifactId>luna-cloud-starter-parent</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
@@ -17,6 +17,13 @@
     <properties>
         <start-class>com.github.charlemaznable.luna.examples.eureka.twins.Application</start-class>
     </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.github.charlemaznable.luna</groupId>
+            <artifactId>luna-cloud-eureka</artifactId>
+        </dependency>
+    </dependencies>
 
     <build>
         <finalName>eureka-twins</finalName>

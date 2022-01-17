@@ -2,4 +2,5 @@
 spring.application.name=test.eureka
 server.servlet.context-path=/test-eureka
 server.port=61224
-eureka.client.serviceUrl.defaultZone=http://localhost:61223/test-eureka/eureka/
+eureka.instance.hostname=peer2
+eureka.client.serviceUrl.defaultZone=http://peer1:61223/test-eureka/eureka/

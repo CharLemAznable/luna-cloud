@@ -6,18 +6,18 @@
 
     <parent>
         <groupId>com.github.charlemaznable</groupId>
-        <artifactId>complex-dependencies</artifactId>
+        <artifactId>complex-starter-parent</artifactId>
         <version>0.5.5-SNAPSHOT</version>
     </parent>
 
     <groupId>com.github.charlemaznable.luna</groupId>
-    <artifactId>luna-cloud-commons-dependencies</artifactId>
+    <artifactId>luna-cloud-starter-parent</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
 
-    <name>Luna Cloud Commons Dependencies</name>
+    <name>Luna Cloud Starter Parent</name>
     <url>https://github.com/CharLemAznable/luna-cloud</url>
-    <description>Luna Cloud Commons Dependencies Pom.</description>
+    <description>Luna Cloud Starter Parent Pom.</description>
 
     <scm>
         <connection>scm:git:https://github.com/CharLemAznable/luna-cloud.git</connection>
@@ -27,17 +27,20 @@
 
     <properties>
         <luna-cloud.version>0.0.1-SNAPSHOT</luna-cloud.version>
-        <spring-cloud.version>2021.0.0</spring-cloud.version>
     </properties>
 
     <dependencies>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter</artifactId>
+        </dependency>
         <dependency>
             <groupId>com.github.charlemaznable.luna</groupId>
             <artifactId>luna-cloud-commons</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter</artifactId>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
         </dependency>
 
         <dependency>
@@ -53,26 +56,22 @@
             <groupId>com.github.charlemaznable</groupId>
             <artifactId>embedded-mysql-extension</artifactId>
         </dependency>
-        <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-            <scope>test</scope>
-        </dependency>
     </dependencies>
 
     <dependencyManagement>
         <dependencies>
             <dependency>
                 <groupId>com.github.charlemaznable.luna</groupId>
-                <artifactId>luna-cloud-commons</artifactId>
+                <artifactId>luna-cloud-dependencies</artifactId>
                 <version>${luna-cloud.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.springframework.cloud</groupId>
-                <artifactId>spring-cloud-dependencies</artifactId>
-                <version>${spring-cloud.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>com.github.charlemaznable.luna</groupId>
+                <artifactId>luna-cloud-eureka</artifactId>
+                <version>${luna-cloud.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
