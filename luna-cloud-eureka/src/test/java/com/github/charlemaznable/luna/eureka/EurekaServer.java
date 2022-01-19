@@ -1,11 +1,10 @@
 package com.github.charlemaznable.luna.eureka;
 
-import com.github.charlemaznable.core.spring.ComplexBeanNameGenerator;
+import com.github.charlemaznable.luna.commons.LunaApplication;
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
 
-@SpringBootApplication(nameGenerator = ComplexBeanNameGenerator.class)
+@LunaApplication
 @EnableEurekaServer
 public class EurekaServer {
 

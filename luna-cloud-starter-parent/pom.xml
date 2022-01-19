@@ -73,6 +73,11 @@
                 <artifactId>luna-cloud-eureka</artifactId>
                 <version>${luna-cloud.version}</version>
             </dependency>
+            <dependency>
+                <groupId>com.github.charlemaznable.luna</groupId>
+                <artifactId>luna-cloud-producer</artifactId>
+                <version>${luna-cloud.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 

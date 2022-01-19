@@ -1,10 +1,8 @@
 package com.github.charlemaznable.luna.commons;
 
-import com.github.charlemaznable.core.spring.ComplexBeanNameGenerator;
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-@SpringBootApplication(nameGenerator = ComplexBeanNameGenerator.class)
+@LunaApplication
 public class TestApplication {
 
     public static void main(String[] args) {
