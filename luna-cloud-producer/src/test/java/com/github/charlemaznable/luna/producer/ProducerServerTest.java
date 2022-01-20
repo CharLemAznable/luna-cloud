@@ -7,7 +7,9 @@ import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.n3r.diamond.client.impl.MockDiamondServer;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.cloud.client.discovery.DiscoveryClient;
 
 import java.time.Duration;
 
@@ -35,12 +37,15 @@ public class ProducerServerTest {
     }
 
     private TestClient testClient = getClient(TestClient.class);
+    @Autowired
+    private DiscoveryClient discoveryClient;
 
     @Test
     public void testEureka() {
         assertEquals("hello Adam，this is a empty world.", testClient.produce("Adam"));
-        await().forever().pollInterval(Duration.ofSeconds(5)).untilAsserted(() ->
-                assertEquals("hello dear Bob，this is a empty world.", testClient.consume("Bob")));
+        await().forever().pollInterval(Duration.ofSeconds(5)).until(() ->
+                discoveryClient.getServices().contains("test.producer"));
+        assertEquals("hello dear Bob，this is a empty world.", testClient.consume("Bob"));
     }
 
     @OhClient

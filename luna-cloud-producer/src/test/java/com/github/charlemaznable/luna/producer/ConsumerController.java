@@ -21,11 +21,6 @@ public class ConsumerController {
 
     @GetMapping("/consume")
     public String consume(@RequestParam String name) {
-        try {
-            return remoteFeign.produce("dear " + name);
-        } catch (Exception e) {
-            log.debug("remote feign error: {}", e.getMessage());
-            return e.getMessage();
-        }
+        return remoteFeign.produce("dear " + name);
     }
 }
