@@ -1,4 +1,4 @@
-package com.github.charlemaznable.luna.producer;
+package com.github.charlemaznable.luna.consumer;
 
 import com.github.charlemaznable.core.net.common.Mapping;
 import com.github.charlemaznable.core.net.common.Parameter;
@@ -18,16 +18,16 @@ import static org.awaitility.Awaitility.await;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.springframework.boot.test.context.SpringBootTest.WebEnvironment.DEFINED_PORT;
 
-@SpringBootTest(classes = ProducerServer.class,
+@SpringBootTest(classes = ConsumerServer.class,
         webEnvironment = DEFINED_PORT)
-public class ProducerServerTest {
+public class ConsumerServerTest {
 
     @BeforeAll
     public static void beforeAll() {
         MockDiamondServer.setUpMockServer();
-        MockDiamondServer.setConfigInfo("LunaCloud", "producer", "" +
-                "spring.application.name=test.producer\n" +
-                "server.port=61223\n" +
+        MockDiamondServer.setConfigInfo("LunaCloud", "consumer", "" +
+                "spring.application.name=test.consumer\n" +
+                "server.port=61224\n" +
                 "eureka.client.serviceUrl.defaultZone=http://localhost:${server.port}/eureka/\n");
     }
 
@@ -41,15 +41,15 @@ public class ProducerServerTest {
     private DiscoveryClient discoveryClient;
 
     @Test
-    public void testProducer() {
+    public void testConsumer() {
         assertEquals("hello Adam，this is a empty world.", testClient.produce("Adam"));
         await().forever().pollInterval(Duration.ofSeconds(5)).until(() ->
-                discoveryClient.getServices().contains("test.producer"));
+                discoveryClient.getServices().contains("test.consumer"));
         assertEquals("hello dear Bob，this is a empty world.", testClient.consume("Bob"));
     }
 
     @OhClient
-    @Mapping("http://localhost:61223")
+    @Mapping("http://localhost:61224")
     public interface TestClient {
 
         @Mapping("/produce")
