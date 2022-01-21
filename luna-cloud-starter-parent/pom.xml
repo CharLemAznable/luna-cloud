@@ -49,6 +49,11 @@
             <scope>test</scope>
         </dependency>
         <dependency>
+            <groupId>com.github.charlemaznable</groupId>
+            <artifactId>logback-miner-cloud-extension</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
             <groupId>com.github.kstyrc</groupId>
             <artifactId>embedded-redis</artifactId>
         </dependency>
