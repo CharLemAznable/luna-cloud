@@ -12,8 +12,7 @@ import static com.github.charlemaznable.core.net.ohclient.OhFactory.getClient;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.springframework.boot.test.context.SpringBootTest.WebEnvironment.DEFINED_PORT;
 
-@SpringBootTest(classes = TestApplication.class,
-        webEnvironment = DEFINED_PORT)
+@SpringBootTest(classes = TestApplication.class, webEnvironment = DEFINED_PORT)
 public class CommonsApplicationTest {
 
     @BeforeAll

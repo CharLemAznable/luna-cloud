@@ -18,8 +18,7 @@ import static org.awaitility.Awaitility.await;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.springframework.boot.test.context.SpringBootTest.WebEnvironment.DEFINED_PORT;
 
-@SpringBootTest(classes = ConsumerServer.class,
-        webEnvironment = DEFINED_PORT)
+@SpringBootTest(classes = ConsumerServer.class, webEnvironment = DEFINED_PORT)
 public class ConsumerServerTest {
 
     @BeforeAll
@@ -43,9 +42,8 @@ public class ConsumerServerTest {
     @Test
     public void testConsumer() {
         assertEquals("hello Adam，this is a empty world.", testClient.produce("Adam"));
-        await().forever().pollInterval(Duration.ofSeconds(5)).until(() ->
-                discoveryClient.getServices().contains("test.consumer"));
-        assertEquals("hello dear Bob，this is a empty world.", testClient.consume("Bob"));
+        await().forever().pollInterval(Duration.ofSeconds(5)).untilAsserted(() ->
+                assertEquals("hello dear Bob，this is a empty world.", testClient.consume("Bob")));
     }
 
     @OhClient
